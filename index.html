@@ -1,0 +1,46 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Torn API Library</title>
+  <script src="torn.js"></script>
+</head>
+
+<body>
+  <input id="inputAPIKey" placeholder="API Key" />
+  <button id="btnInit">Init</button>
+  <br/>
+  <br/>
+  <button id="btnProperties">Properties</button>
+  </br/>
+  <br/>
+</body>
+
+<script>
+
+  let torn;
+
+  window.onload = function () {
+
+    document.getElementById('btnInit').addEventListener('click', () => {
+      const key = document.getElementById('inputAPIKey').value;
+      torn = new Torn({ API_Key: key });
+    });
+
+    document.getElementById('btnProperties').addEventListener('click', () => {
+
+      torn.user.properties().then((result) => {
+        console.log(result);
+      }, function (err) {
+        output.innerHTML = err;
+        console.log(err);
+      });
+
+    });
+
+  }
+</script>
+
+</html>
