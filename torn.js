@@ -7,6 +7,9 @@ function Torn(config) {
   const API_Key = config.API_Key;
   const baseURL = 'https://api.torn.com';
 
+  ///////////////////////////////////////////////
+  //                    User
+  ///////////////////////////////////////////////
   this.user = {};
 
   this.user.networth = (id) => {
@@ -127,6 +130,56 @@ function Torn(config) {
 
   this.user.refills = (id) => {
     return makeRequest(id, 'user', ['refills']);
+  }
+
+  ///////////////////////////////////////////////
+  //                    Torn
+  ///////////////////////////////////////////////
+
+  this.torn = {};
+
+  this.torn.items = (id) => {
+    return makeRequest(id, 'torn', ['items']);
+  }
+
+  this.torn.medals = (id) => {
+    return makeRequest(id, 'torn', ['medals']);
+  }
+
+  this.torn.honors = (id) => {
+    return makeRequest(id, 'torn', ['honors']);
+  }
+
+  this.torn.organisedcrimes = (id) => {
+    return makeRequest(id, 'torn', ['organisedcrimes']);
+  }
+
+  this.torn.gyms = (id) => {
+    return makeRequest(id, 'torn', ['gyms']);
+  }
+
+  this.torn.companies = (id) => {
+    return makeRequest(id, 'torn', ['companies']);
+  }
+
+  this.torn.properties = (id) => {
+    return makeRequest(id, 'torn', ['properties']);
+  }
+
+  this.torn.education = (id) => {
+    return makeRequest(id, 'torn', ['education']);
+  }
+
+  this.torn.stats = (id) => {
+    return makeRequest(id, 'torn', ['stats']);
+  }
+
+  this.torn.stocks = (id) => {
+    return makeRequest(id, 'torn', ['stocks']);
+  }
+
+  this.torn.factiontree = (id) => {
+    return makeRequest(id, 'torn', ['factiontree']);
   }
 
   ///////////////////////////////

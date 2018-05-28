@@ -14,37 +14,50 @@
   <br/>
   <br/>
   <h1>User</h1>
+  <button id="btnUserNetworth">Networth</button>
+  <button id="btnUserBazaar">Bazaar</button>
+  <button id="btnUserDisplay">Display</button>
+  <button id="btnUserInventory">Inventory</button>
+  <button id="btnUserHOF">HOF</button>
+  <button id="btnUserTravel">Travel</button>
+  <button id="btnUserEvents">Events</button>
+  <button id="btnUserMessages">Messages</button>
+  <button id="btnUserEducation">Education</button>
+  <button id="btnUserMedals">Medals</button>
+  <button id="btnUserHonors">Honors</button>
+  <button id="btnUserNotifications">Notifications</button>
+  <button id="btnUserPersonalstats">Personalstats</button>
+  <button id="btnUserWorkstats">Workstats</button>
+  <button id="btnUserCrimes">Crimes</button>
+  <button id="btnUserIcons">Icons</button>
+  <button id="btnUserCooldowns">Cooldowns</button>
+  <button id="btnUserMoney">Money</button>
+  <button id="btnUserPerks">Perks</button>
+  <button id="btnUserBattlestats">Battlestats</button>
+  <button id="btnUserBars">Bars</button>
+  <button id="btnUserProfile">Profile</button>
+  <button id="btnUserBasic">Basic</button>
+  <button id="btnUserAttacks">Attacks</button>
+  <button id="btnUserAttacksfull">Attacksfull</button>
+  <button id="btnUserStocks">Stocks</button>
+  <button id="btnUserProperties">Properties</button>
+  <button id="btnUserJobpoints">Jobpoints</button>
+  <button id="btnUserMerits">Merits</button>
+  <button id="btnUserRefills">Refills</button>
+
   <br/>
-  <button id="btnNetworth">Networth</button>
-  <button id="btnBazaar">Bazaar</button>
-  <button id="btnDisplay">Display</button>
-  <button id="btnInventory">Inventory</button>
-  <button id="btnHOF">HOF</button>
-  <button id="btnTravel">Travel</button>
-  <button id="btnEvents">Events</button>
-  <button id="btnMessages">Messages</button>
-  <button id="btnEducation">Education</button>
-  <button id="btnMedals">Medals</button>
-  <button id="btnHonors">Honors</button>
-  <button id="btnNotifications">Notifications</button>
-  <button id="btnPersonalstats">Personalstats</button>
-  <button id="btnWorkstats">Workstats</button>
-  <button id="btnCrimes">Crimes</button>
-  <button id="btnIcons">Icons</button>
-  <button id="btnCooldowns">Cooldowns</button>
-  <button id="btnMoney">Money</button>
-  <button id="btnPerks">Perks</button>
-  <button id="btnBattlestats">Battlestats</button>
-  <button id="btnBars">Bars</button>
-  <button id="btnProfile">Profile</button>
-  <button id="btnBasic">Basic</button>
-  <button id="btnAttacks">Attacks</button>
-  <button id="btnAttacksfull">Attacksfull</button>
-  <button id="btnStocks">Stocks</button>
-  <button id="btnProperties">Properties</button> 
-  <button id="btnJobpoints">Jobpoints</button>
-  <button id="btnMerits">Merits</button>
-  <button id="btnRefills">Refills</button>
+  <h1>Torn</h1>
+  <button id="btnTornItems">Items</button>
+  <button id="btnTornMedals">Medals</button>
+  <button id="btnTornHonors">Honors</button>
+  <button id="btnTornOrganisedCrimes">Organised Crimes</button>
+  <button id="btnTornGyms">Gyms</button>
+  <button id="btnTornCompanies">Companies</button>
+  <button id="btnTornProperties">Properties</button>
+  <button id="btnTornEducation">Education</button>
+  <button id="btnTornStats">Stats</button>
+  <button id="btnTornStocks">Stocks</button>
+  <button id="btnTornFactionTree">FactionTree</button>
 
   </br/>
   <br/>
@@ -70,7 +83,7 @@
     //          User
     //////////////////////////////
 
-    document.getElementById('btnNetworth').addEventListener('click', () => {
+    document.getElementById('btnUserNetworth').addEventListener('click', () => {
       torn.user.networth().then((result) => {
         printResponse(result);
       }, function (err) {
@@ -78,7 +91,7 @@
       });
     });
 
-    document.getElementById('btnBazaar').addEventListener('click', () => {
+    document.getElementById('btnUserBazaar').addEventListener('click', () => {
       torn.user.bazaar().then((result) => {
         printResponse(result);
       }, function (err) {
@@ -86,7 +99,7 @@
       });
     });
 
-    document.getElementById('btnDisplay').addEventListener('click', () => {
+    document.getElementById('btnUserDisplay').addEventListener('click', () => {
       torn.user.display().then((result) => {
         printResponse(result);
       }, function (err) {
@@ -94,7 +107,7 @@
       });
     });
 
-    document.getElementById('btnInventory').addEventListener('click', () => {
+    document.getElementById('btnUserInventory').addEventListener('click', () => {
       torn.user.inventory().then((result) => {
         printResponse(result);
       }, function (err) {
@@ -102,7 +115,7 @@
       });
     });
 
-     document.getElementById('btnHOF').addEventListener('click', () => {
+    document.getElementById('btnUserHOF').addEventListener('click', () => {
       torn.user.hof().then((result) => {
         printResponse(result);
       }, function (err) {
@@ -110,7 +123,7 @@
       });
     });
 
-    document.getElementById('btnTravel').addEventListener('click', () => {
+    document.getElementById('btnUserTravel').addEventListener('click', () => {
       torn.user.travel().then((result) => {
         printResponse(result);
       }, function (err) {
@@ -118,7 +131,7 @@
       });
     });
 
-    document.getElementById('btnEvents').addEventListener('click', () => {
+    document.getElementById('btnUserEvents').addEventListener('click', () => {
       torn.user.events().then((result) => {
         printResponse(result);
       }, function (err) {
@@ -126,7 +139,7 @@
       });
     });
 
-    document.getElementById('btnMessages').addEventListener('click', () => {
+    document.getElementById('btnUserMessages').addEventListener('click', () => {
       torn.user.messages().then((result) => {
         printResponse(result);
       }, function (err) {
@@ -134,7 +147,7 @@
       });
     });
 
-    document.getElementById('btnEducation').addEventListener('click', () => {
+    document.getElementById('btnUserEducation').addEventListener('click', () => {
       torn.user.education().then((result) => {
         printResponse(result);
       }, function (err) {
@@ -142,7 +155,7 @@
       });
     });
 
-    document.getElementById('btnMedals').addEventListener('click', () => {
+    document.getElementById('btnUserMedals').addEventListener('click', () => {
       torn.user.medals().then((result) => {
         printResponse(result);
       }, function (err) {
@@ -150,7 +163,7 @@
       });
     });
 
-    document.getElementById('btnHonors').addEventListener('click', () => {
+    document.getElementById('btnUserHonors').addEventListener('click', () => {
       torn.user.honors().then((result) => {
         printResponse(result);
       }, function (err) {
@@ -158,7 +171,7 @@
       });
     });
 
-    document.getElementById('btnNotifications').addEventListener('click', () => {
+    document.getElementById('btnUserNotifications').addEventListener('click', () => {
       torn.user.notifications().then((result) => {
         printResponse(result);
       }, function (err) {
@@ -166,7 +179,7 @@
       });
     });
 
-    document.getElementById('btnPersonalstats').addEventListener('click', () => {
+    document.getElementById('btnUserPersonalstats').addEventListener('click', () => {
       torn.user.personalstats().then((result) => {
         printResponse(result);
       }, function (err) {
@@ -174,7 +187,7 @@
       });
     });
 
-    document.getElementById('btnWorkstats').addEventListener('click', () => {
+    document.getElementById('btnUserWorkstats').addEventListener('click', () => {
       torn.user.workstats().then((result) => {
         printResponse(result);
       }, function (err) {
@@ -182,7 +195,7 @@
       });
     });
 
-    document.getElementById('btnCrimes').addEventListener('click', () => {
+    document.getElementById('btnUserCrimes').addEventListener('click', () => {
       torn.user.crimes().then((result) => {
         printResponse(result);
       }, function (err) {
@@ -190,7 +203,7 @@
       });
     });
 
-    document.getElementById('btnIcons').addEventListener('click', () => {
+    document.getElementById('btnUserIcons').addEventListener('click', () => {
       torn.user.icons().then((result) => {
         printResponse(result);
       }, function (err) {
@@ -198,7 +211,7 @@
       });
     });
 
-    document.getElementById('btnCooldowns').addEventListener('click', () => {
+    document.getElementById('btnUserCooldowns').addEventListener('click', () => {
       torn.user.cooldowns().then((result) => {
         printResponse(result);
       }, function (err) {
@@ -206,7 +219,7 @@
       });
     });
 
-    document.getElementById('btnMoney').addEventListener('click', () => {
+    document.getElementById('btnUserMoney').addEventListener('click', () => {
       torn.user.money().then((result) => {
         printResponse(result);
       }, function (err) {
@@ -214,7 +227,7 @@
       });
     });
 
-    document.getElementById('btnPerks').addEventListener('click', () => {
+    document.getElementById('btnUserPerks').addEventListener('click', () => {
       torn.user.perks().then((result) => {
         printResponse(result);
       }, function (err) {
@@ -222,7 +235,7 @@
       });
     });
 
-    document.getElementById('btnBattlestats').addEventListener('click', () => {
+    document.getElementById('btnUserBattlestats').addEventListener('click', () => {
       torn.user.battlestats().then((result) => {
         printResponse(result);
       }, function (err) {
@@ -230,7 +243,7 @@
       });
     });
 
-    document.getElementById('btnBars').addEventListener('click', () => {
+    document.getElementById('btnUserBars').addEventListener('click', () => {
       torn.user.bars().then((result) => {
         printResponse(result);
       }, function (err) {
@@ -238,7 +251,7 @@
       });
     });
 
-    document.getElementById('btnProfile').addEventListener('click', () => {
+    document.getElementById('btnUserProfile').addEventListener('click', () => {
       torn.user.profile().then((result) => {
         printResponse(result);
       }, function (err) {
@@ -246,7 +259,7 @@
       });
     });
 
-    document.getElementById('btnBasic').addEventListener('click', () => {
+    document.getElementById('btnUserBasic').addEventListener('click', () => {
       torn.user.basic().then((result) => {
         printResponse(result);
       }, function (err) {
@@ -254,7 +267,7 @@
       });
     });
 
-    document.getElementById('btnAttacks').addEventListener('click', () => {
+    document.getElementById('btnUserAttacks').addEventListener('click', () => {
       torn.user.attacks().then((result) => {
         printResponse(result);
       }, function (err) {
@@ -262,7 +275,7 @@
       });
     });
 
-    document.getElementById('btnAttacksfull').addEventListener('click', () => {
+    document.getElementById('btnUserAttacksfull').addEventListener('click', () => {
       torn.user.attacksfull().then((result) => {
         printResponse(result);
       }, function (err) {
@@ -270,7 +283,7 @@
       });
     });
 
-    document.getElementById('btnStocks').addEventListener('click', () => {
+    document.getElementById('btnUserStocks').addEventListener('click', () => {
       torn.user.stocks().then((result) => {
         printResponse(result);
       }, function (err) {
@@ -278,7 +291,7 @@
       });
     });
 
-    document.getElementById('btnProperties').addEventListener('click', () => {
+    document.getElementById('btnUserProperties').addEventListener('click', () => {
       torn.user.properties().then((result) => {
         printResponse(result);
       }, function (err) {
@@ -286,7 +299,7 @@
       });
     });
 
-    document.getElementById('btnJobpoints').addEventListener('click', () => {
+    document.getElementById('btnUserJobpoints').addEventListener('click', () => {
       torn.user.jobpoints().then((result) => {
         printResponse(result);
       }, function (err) {
@@ -294,7 +307,7 @@
       });
     });
 
-    document.getElementById('btnMerits').addEventListener('click', () => {
+    document.getElementById('btnUserMerits').addEventListener('click', () => {
       torn.user.merits().then((result) => {
         printResponse(result);
       }, function (err) {
@@ -302,8 +315,100 @@
       });
     });
 
-    document.getElementById('btnRefills').addEventListener('click', () => {
+    document.getElementById('btnUserRefills').addEventListener('click', () => {
       torn.user.refills().then((result) => {
+        printResponse(result);
+      }, function (err) {
+        printResponse(err);
+      });
+    });
+
+    //////////////////////////////
+    //          Torn
+    //////////////////////////////
+
+    document.getElementById('btnTornItems').addEventListener('click', () => {
+      torn.torn.items().then((result) => {
+        printResponse(result);
+      }, function (err) {
+        printResponse(err);
+      });
+    });
+
+    document.getElementById('btnTornMedals').addEventListener('click', () => {
+      torn.torn.medals().then((result) => {
+        printResponse(result);
+      }, function (err) {
+        printResponse(err);
+      });
+    });
+
+    document.getElementById('btnTornHonors').addEventListener('click', () => {
+      torn.torn.honors().then((result) => {
+        printResponse(result);
+      }, function (err) {
+        printResponse(err);
+      });
+    });
+
+    document.getElementById('btnTornOrganisedCrimes').addEventListener('click', () => {
+      torn.torn.organisedcrimes().then((result) => {
+        printResponse(result);
+      }, function (err) {
+        printResponse(err);
+      });
+    });
+
+    document.getElementById('btnTornGyms').addEventListener('click', () => {
+      torn.torn.gyms().then((result) => {
+        printResponse(result);
+      }, function (err) {
+        printResponse(err);
+      });
+    });
+
+    document.getElementById('btnTornCompanies').addEventListener('click', () => {
+      torn.torn.companies().then((result) => {
+        printResponse(result);
+      }, function (err) {
+        printResponse(err);
+      });
+    });
+
+    document.getElementById('btnTornProperties').addEventListener('click', () => {
+      torn.torn.properties().then((result) => {
+        printResponse(result);
+      }, function (err) {
+        printResponse(err);
+      });
+    });
+
+    document.getElementById('btnTornEducation').addEventListener('click', () => {
+      torn.torn.education().then((result) => {
+        printResponse(result);
+      }, function (err) {
+        printResponse(err);
+      });
+    });
+
+    document.getElementById('btnTornStats').addEventListener('click', () => {
+      torn.torn.stats().then((result) => {
+        printResponse(result);
+      }, function (err) {
+        printResponse(err);
+      });
+    });
+
+    document.getElementById('btnTornStocks').addEventListener('click', () => {
+      torn.torn.stocks().then((result) => {
+        printResponse(result);
+      }, function (err) {
+        printResponse(err);
+      });
+    });
+
+    document.getElementById('btnTornFactionTree').addEventListener('click', () => {
+      torn.torn.factiontree().then((result) => {
         printResponse(result);
       }, function (err) {
         printResponse(err);
@@ -312,7 +417,7 @@
 
   }
 
-  function printResponse(obj){
+  function printResponse(obj) {
     const outputString = JSON.stringify(obj, null, 2);
     document.getElementById('output').innerHTML = outputString;
   }
