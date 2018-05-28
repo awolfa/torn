@@ -9,51 +9,129 @@ function Torn(config) {
 
   this.user = {};
 
-  this.user.properties = function () {
-
-    let url = baseURL + '/user/' + '?selections=properties' + '&key=' + API_Key;
-    return new Promise(function (resolve, reject) {
-
-      xhr.open("GET", url, true);
-
-      xhr.onload = function (e) {
-        if (xhr.readyState === 4) {
-          if (xhr.status === 200) {
-            const response = JSON.parse(xhr.responseText);
-
-            if (checkError(response) === true) {
-              reject(response.error.error);
-            } else {
-              // TODO: Move to seperatefunction, keep first iteration identical to api
-              const p = response.properties;
-              const properties = [];
-              for (var key in p) {
-                if (p.hasOwnProperty(key)) {
-                  properties.push({
-                    property_id: key,
-                    owner_id: p[key].owner_id,
-                    property_type: p[key].property_type
-                  });
-                }
-              }
-              resolve(properties);
-            };
-
-          } else {
-            reject(Error(xhr.statusText));
-          }
-        }
-      };
-
-      xhr.onerror = function (e) {
-        reject(Error(xhr.statusText));
-      };
-
-      xhr.send(null);
-
-    });
-
+  this.user.networth = (id) => {
+    return urlBuilder(id, 'user', ['networth']);
   }
+
+  this.user.bazaar = (id) => {
+    return urlBuilder(id, 'user', ['bazaar']);
+  }
+
+  this.user.display = (id) => {
+    return urlBuilder(id, 'user', ['display']);
+  }
+
+  this.user.inventory = (id) => {
+    return urlBuilder(id, 'user', ['inventory']);
+  }
+
+  this.user.hof = (id) => {
+    return urlBuilder(id, 'user', ['hof']);
+  }
+
+  this.user.travel = (id) => {
+    return urlBuilder(id, 'user', ['travel']);
+  }
+
+  this.user.events = (id) => {
+    return urlBuilder(id, 'user', ['events']);
+  }
+
+  this.user.messages = (id) => {
+    return urlBuilder(id, 'user', ['messages']);
+  }
+
+  this.user.education = (id) => {
+    return urlBuilder(id, 'user', ['education']);
+  }
+
+  this.user.medals = (id) => {
+    return urlBuilder(id, 'user', ['medals']);
+  }
+
+  this.user.honors = (id) => {
+    return urlBuilder(id, 'user', ['honors']);
+  }
+
+  this.user.notifications = (id) => {
+    return urlBuilder(id, 'user', ['notifications']);
+  }
+
+  this.user.personalstats = (id) => {
+    return urlBuilder(id, 'user', ['personalstats']);
+  }
+
+  this.user.workstats = (id) => {
+    return urlBuilder(id, 'user', ['workstats']);
+  }
+
+  this.user.crimes = (id) => {
+    return urlBuilder(id, 'user', ['crimes']);
+  }
+
+  this.user.icons = (id) => {
+    return urlBuilder(id, 'user', ['icons']);
+  }
+
+  this.user.cooldowns = (id) => {
+    return urlBuilder(id, 'user', ['cooldowns']);
+  }
+
+  this.user.money = (id) => {
+    return urlBuilder(id, 'user', ['money']);
+  }
+
+  this.user.perks = (id) => {
+    return urlBuilder(id, 'user', ['perks']);
+  }
+
+  this.user.battlestats = (id) => {
+    return urlBuilder(id, 'user', ['battlestats']);
+  }
+
+  this.user.bars = (id) => {
+    return urlBuilder(id, 'user', ['bars']);
+  }
+
+  this.user.profile = (id) => {
+    return urlBuilder(id, 'user', ['profile']);
+  }
+
+  this.user.basic = (id) => {
+    return urlBuilder(id, 'user', ['basic']);
+  }
+
+  this.user.attacks = (id) => {
+    return urlBuilder(id, 'user', ['attacks']);
+  }
+
+  this.user.attacksfull = (id) => {
+    return urlBuilder(id, 'user', ['attacksfull']);
+  }
+
+  this.user.stocks = (id) => {
+    return urlBuilder(id, 'user', ['stocks']);
+  }
+
+  this.user.properties = (id) => {
+    return urlBuilder(id, 'user', ['properties']);
+  }
+
+  this.user.jobpoints = (id) => {
+    return urlBuilder(id, 'user', ['jobpoints']);
+  }
+
+  this.user.merits = (id) => {
+    return urlBuilder(id, 'user', ['merits']);
+  }
+
+  this.user.refills = (id) => {
+    return urlBuilder(id, 'user', ['refills']);
+  }
+
+  ///////////////////////////////
+  //  Utilities
+  ///////////////////////////////
 
   function checkError(response) {
     if (response.error !== undefined) {
@@ -106,4 +184,78 @@ function Torn(config) {
       return false;
     }
   }
+
+  function getRequest(url) {
+    return new Promise(function (resolve, reject) {
+
+      xhr.open("GET", url, true);
+
+      xhr.onload = function (e) {
+        if (xhr.readyState === 4) {
+          if (xhr.status === 200) {
+            const response = JSON.parse(xhr.responseText);
+
+            if (checkError(response) === true) {
+              reject(response.error);
+            } else {
+              resolve(response);
+            };
+
+          } else {
+            reject(Error(xhr.statusText));
+          }
+        }
+      };
+
+      xhr.onerror = function (e) {
+        reject(Error(xhr.statusText));
+      };
+
+      xhr.send(null);
+
+    });
+  }
+
+  function propertiesToArray(response) {
+    const p = response.properties;
+    const properties = [];
+    for (var key in p) {
+      if (p.hasOwnProperty(key)) {
+        properties.push({
+          property_id: key,
+          owner_id: p[key].owner_id,
+          property_type: p[key].property_type
+        });
+      }
+    }
+    return properties;
+  }
+
+  function urlBuilder(id, type, selections) {
+    // add first item to selection
+    let selectionString = selections[0];
+
+    // remove first item
+    selections.splice(0, 1);
+
+    // add remaining items
+    if (selections.length > 0) {
+      selections.forEach(selection => {
+        selectionString += (',' + selection);
+      });
+    }
+
+    // url
+    let url = '';
+    if (id === undefined) {
+      url = baseURL;
+    } else {
+      url = baseURL + '/' + id;
+    }
+    url += '/' + type + '/' + '?selections=' + selectionString + '&key=' + API_Key;
+
+    return getRequest(url);
+  }
 }
+
+

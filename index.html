@@ -13,7 +13,39 @@
   <button id="btnInit">Init</button>
   <br/>
   <br/>
-  <button id="btnProperties">Properties</button>
+  <h1>User</h1>
+  <br/>
+  <button id="btnNetworth">Networth</button>
+  <button id="btnBazaar">Bazaar</button>
+  <button id="btnDisplay">Display</button>
+  <button id="btnInventory">Inventory</button>
+  <button id="btnHOF">HOF</button>
+  <button id="btnTravel">Travel</button>
+  <button id="btnEvents">Events</button>
+  <button id="btnMessages">Messages</button>
+  <button id="btnEducation">Education</button>
+  <button id="btnMedals">Medals</button>
+  <button id="btnHonors">Honors</button>
+  <button id="btnNotifications">Notifications</button>
+  <button id="btnPersonalstats">Personalstats</button>
+  <button id="btnWorkstats">Workstats</button>
+  <button id="btnCrimes">Crimes</button>
+  <button id="btnIcons">Icons</button>
+  <button id="btnCooldowns">Cooldowns</button>
+  <button id="btnMoney">Money</button>
+  <button id="btnPerks">Perks</button>
+  <button id="btnBattlestats">Battlestats</button>
+  <button id="btnBars">Bars</button>
+  <button id="btnProfile">Profile</button>
+  <button id="btnBasic">Basic</button>
+  <button id="btnAttacks">Attacks</button>
+  <button id="btnAttacksfull">Attacksfull</button>
+  <button id="btnStocks">Stocks</button>
+  <button id="btnProperties">Properties</button> 
+  <button id="btnJobpoints">Jobpoints</button>
+  <button id="btnMerits">Merits</button>
+  <button id="btnRefills">Refills</button>
+
   </br/>
   <br/>
 </body>
@@ -29,15 +61,240 @@
       torn = new Torn({ API_Key: key });
     });
 
-    document.getElementById('btnProperties').addEventListener('click', () => {
+    //////////////////////////////
+    //          User
+    //////////////////////////////
 
+    document.getElementById('btnNetworth').addEventListener('click', () => {
+      torn.user.networth().then((result) => {
+        console.log(result);
+      }, function (err) {
+        console.log(err);
+      });
+    });
+
+    document.getElementById('btnBazaar').addEventListener('click', () => {
+      torn.user.bazaar().then((result) => {
+        console.log(result);
+      }, function (err) {
+        console.log(err);
+      });
+    });
+
+    document.getElementById('btnDisplay').addEventListener('click', () => {
+      torn.user.display().then((result) => {
+        console.log(result);
+      }, function (err) {
+        console.log(err);
+      });
+    });
+
+    document.getElementById('btnInventory').addEventListener('click', () => {
+      torn.user.inventory().then((result) => {
+        console.log(result);
+      }, function (err) {
+        console.log(err);
+      });
+    });
+
+    document.getElementById('btnTravel').addEventListener('click', () => {
+      torn.user.travel().then((result) => {
+        console.log(result);
+      }, function (err) {
+        console.log(err);
+      });
+    });
+
+    document.getElementById('btnEvents').addEventListener('click', () => {
+      torn.user.events().then((result) => {
+        console.log(result);
+      }, function (err) {
+        console.log(err);
+      });
+    });
+
+    document.getElementById('btnMessages').addEventListener('click', () => {
+      torn.user.messages().then((result) => {
+        console.log(result);
+      }, function (err) {
+        console.log(err);
+      });
+    });
+
+    document.getElementById('btnEducation').addEventListener('click', () => {
+      torn.user.education().then((result) => {
+        console.log(result);
+      }, function (err) {
+        console.log(err);
+      });
+    });
+
+    document.getElementById('btnMedals').addEventListener('click', () => {
+      torn.user.medals().then((result) => {
+        console.log(result);
+      }, function (err) {
+        console.log(err);
+      });
+    });
+
+    document.getElementById('btnHonors').addEventListener('click', () => {
+      torn.user.honors().then((result) => {
+        console.log(result);
+      }, function (err) {
+        console.log(err);
+      });
+    });
+
+    document.getElementById('btnNotifications').addEventListener('click', () => {
+      torn.user.notifications().then((result) => {
+        console.log(result);
+      }, function (err) {
+        console.log(err);
+      });
+    });
+
+    document.getElementById('btnPersonalstats').addEventListener('click', () => {
+      torn.user.personalstats().then((result) => {
+        console.log(result);
+      }, function (err) {
+        console.log(err);
+      });
+    });
+
+    document.getElementById('btnWorkstats').addEventListener('click', () => {
+      torn.user.workstats().then((result) => {
+        console.log(result);
+      }, function (err) {
+        console.log(err);
+      });
+    });
+
+    document.getElementById('btnCrimes').addEventListener('click', () => {
+      torn.user.crimes().then((result) => {
+        console.log(result);
+      }, function (err) {
+        console.log(err);
+      });
+    });
+
+    document.getElementById('btnIcons').addEventListener('click', () => {
+      torn.user.icons().then((result) => {
+        console.log(result);
+      }, function (err) {
+        console.log(err);
+      });
+    });
+
+    document.getElementById('btnCooldowns').addEventListener('click', () => {
+      torn.user.cooldowns().then((result) => {
+        console.log(result);
+      }, function (err) {
+        console.log(err);
+      });
+    });
+
+    document.getElementById('btnMoney').addEventListener('click', () => {
+      torn.user.money().then((result) => {
+        console.log(result);
+      }, function (err) {
+        console.log(err);
+      });
+    });
+
+    document.getElementById('btnPerks').addEventListener('click', () => {
+      torn.user.perks().then((result) => {
+        console.log(result);
+      }, function (err) {
+        console.log(err);
+      });
+    });
+
+    document.getElementById('btnBattlestats').addEventListener('click', () => {
+      torn.user.battlestats().then((result) => {
+        console.log(result);
+      }, function (err) {
+        console.log(err);
+      });
+    });
+
+    document.getElementById('btnBars').addEventListener('click', () => {
+      torn.user.bars().then((result) => {
+        console.log(result);
+      }, function (err) {
+        console.log(err);
+      });
+    });
+
+    document.getElementById('btnProfile').addEventListener('click', () => {
+      torn.user.profile().then((result) => {
+        console.log(result);
+      }, function (err) {
+        console.log(err);
+      });
+    });
+
+    document.getElementById('btnBasic').addEventListener('click', () => {
+      torn.user.basic().then((result) => {
+        console.log(result);
+      }, function (err) {
+        console.log(err);
+      });
+    });
+
+    document.getElementById('btnAttacks').addEventListener('click', () => {
+      torn.user.attacks().then((result) => {
+        console.log(result);
+      }, function (err) {
+        console.log(err);
+      });
+    });
+
+    document.getElementById('btnAttacksfull').addEventListener('click', () => {
+      torn.user.attacksfull().then((result) => {
+        console.log(result);
+      }, function (err) {
+        console.log(err);
+      });
+    });
+
+    document.getElementById('btnStocks').addEventListener('click', () => {
+      torn.user.stocks().then((result) => {
+        console.log(result);
+      }, function (err) {
+        console.log(err);
+      });
+    });
+
+    document.getElementById('btnProperties').addEventListener('click', () => {
       torn.user.properties().then((result) => {
         console.log(result);
       }, function (err) {
-        output.innerHTML = err;
         console.log(err);
       });
+    });
 
+    document.getElementById('btnJobpoints').addEventListener('click', () => {
+      torn.user.jobpoints().then((result) => {
+        console.log(result);
+      }, function (err) {
+        console.log(err);
+      });
+    });
+
+    document.getElementById('btnMerits').addEventListener('click', () => {
+      torn.user.merits().then((result) => {
+        console.log(result);
+      }, function (err) {
+        console.log(err);
+      });
+    });
+
+    document.getElementById('btnRefills').addEventListener('click', () => {
+      torn.user.refills().then((result) => {
+        console.log(result);
+      }, function (err) {
+        console.log(err);
+      });
     });
 
   }
