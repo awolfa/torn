@@ -10,123 +10,123 @@ function Torn(config) {
   this.user = {};
 
   this.user.networth = (id) => {
-    return urlBuilder(id, 'user', ['networth']);
+    return makeRequest(id, 'user', ['networth']);
   }
 
   this.user.bazaar = (id) => {
-    return urlBuilder(id, 'user', ['bazaar']);
+    return makeRequest(id, 'user', ['bazaar']);
   }
 
   this.user.display = (id) => {
-    return urlBuilder(id, 'user', ['display']);
+    return makeRequest(id, 'user', ['display']);
   }
 
   this.user.inventory = (id) => {
-    return urlBuilder(id, 'user', ['inventory']);
+    return makeRequest(id, 'user', ['inventory']);
   }
 
   this.user.hof = (id) => {
-    return urlBuilder(id, 'user', ['hof']);
+    return makeRequest(id, 'user', ['hof']);
   }
 
   this.user.travel = (id) => {
-    return urlBuilder(id, 'user', ['travel']);
+    return makeRequest(id, 'user', ['travel']);
   }
 
   this.user.events = (id) => {
-    return urlBuilder(id, 'user', ['events']);
+    return makeRequest(id, 'user', ['events']);
   }
 
   this.user.messages = (id) => {
-    return urlBuilder(id, 'user', ['messages']);
+    return makeRequest(id, 'user', ['messages']);
   }
 
   this.user.education = (id) => {
-    return urlBuilder(id, 'user', ['education']);
+    return makeRequest(id, 'user', ['education']);
   }
 
   this.user.medals = (id) => {
-    return urlBuilder(id, 'user', ['medals']);
+    return makeRequest(id, 'user', ['medals']);
   }
 
   this.user.honors = (id) => {
-    return urlBuilder(id, 'user', ['honors']);
+    return makeRequest(id, 'user', ['honors']);
   }
 
   this.user.notifications = (id) => {
-    return urlBuilder(id, 'user', ['notifications']);
+    return makeRequest(id, 'user', ['notifications']);
   }
 
   this.user.personalstats = (id) => {
-    return urlBuilder(id, 'user', ['personalstats']);
+    return makeRequest(id, 'user', ['personalstats']);
   }
 
   this.user.workstats = (id) => {
-    return urlBuilder(id, 'user', ['workstats']);
+    return makeRequest(id, 'user', ['workstats']);
   }
 
   this.user.crimes = (id) => {
-    return urlBuilder(id, 'user', ['crimes']);
+    return makeRequest(id, 'user', ['crimes']);
   }
 
   this.user.icons = (id) => {
-    return urlBuilder(id, 'user', ['icons']);
+    return makeRequest(id, 'user', ['icons']);
   }
 
   this.user.cooldowns = (id) => {
-    return urlBuilder(id, 'user', ['cooldowns']);
+    return makeRequest(id, 'user', ['cooldowns']);
   }
 
   this.user.money = (id) => {
-    return urlBuilder(id, 'user', ['money']);
+    return makeRequest(id, 'user', ['money']);
   }
 
   this.user.perks = (id) => {
-    return urlBuilder(id, 'user', ['perks']);
+    return makeRequest(id, 'user', ['perks']);
   }
 
   this.user.battlestats = (id) => {
-    return urlBuilder(id, 'user', ['battlestats']);
+    return makeRequest(id, 'user', ['battlestats']);
   }
 
   this.user.bars = (id) => {
-    return urlBuilder(id, 'user', ['bars']);
+    return makeRequest(id, 'user', ['bars']);
   }
 
   this.user.profile = (id) => {
-    return urlBuilder(id, 'user', ['profile']);
+    return makeRequest(id, 'user', ['profile']);
   }
 
   this.user.basic = (id) => {
-    return urlBuilder(id, 'user', ['basic']);
+    return makeRequest(id, 'user', ['basic']);
   }
 
   this.user.attacks = (id) => {
-    return urlBuilder(id, 'user', ['attacks']);
+    return makeRequest(id, 'user', ['attacks']);
   }
 
   this.user.attacksfull = (id) => {
-    return urlBuilder(id, 'user', ['attacksfull']);
+    return makeRequest(id, 'user', ['attacksfull']);
   }
 
   this.user.stocks = (id) => {
-    return urlBuilder(id, 'user', ['stocks']);
+    return makeRequest(id, 'user', ['stocks']);
   }
 
   this.user.properties = (id) => {
-    return urlBuilder(id, 'user', ['properties']);
+    return makeRequest(id, 'user', ['properties']);
   }
 
   this.user.jobpoints = (id) => {
-    return urlBuilder(id, 'user', ['jobpoints']);
+    return makeRequest(id, 'user', ['jobpoints']);
   }
 
   this.user.merits = (id) => {
-    return urlBuilder(id, 'user', ['merits']);
+    return makeRequest(id, 'user', ['merits']);
   }
 
   this.user.refills = (id) => {
-    return urlBuilder(id, 'user', ['refills']);
+    return makeRequest(id, 'user', ['refills']);
   }
 
   ///////////////////////////////
@@ -231,7 +231,8 @@ function Torn(config) {
     return properties;
   }
 
-  function urlBuilder(id, type, selections) {
+  function makeRequest(id, type, selections) {
+
     // add first item to selection
     let selectionString = selections[0];
 
@@ -246,13 +247,13 @@ function Torn(config) {
     }
 
     // url
-    let url = '';
+    let url =  baseURL + '/' + type + '/';
     if (id === undefined) {
-      url = baseURL;
+      // hi friend ♥
     } else {
-      url = baseURL + '/' + id;
+      url += id;
     }
-    url += '/' + type + '/' + '?selections=' + selectionString + '&key=' + API_Key;
+    url += '?selections=' + selectionString + '&key=' + API_Key;
 
     return getRequest(url);
   }
