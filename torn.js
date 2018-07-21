@@ -182,54 +182,215 @@ function Torn(config) {
     return makeRequest(id, 'torn', ['factiontree']);
   }
 
+  ///////////////////////////////////////////////
+  //                Properties
+  ///////////////////////////////////////////////
+
+  this.properties = {};
+
+  this.properties.property = (id) => {
+    return makeRequest(id, 'property', ['property']);
+  }
+
+  ///////////////////////////////////////////////
+  //                  Company
+  ///////////////////////////////////////////////
+
+  this.company = {};
+
+  this.company.profile = (id) => {
+    return makeRequest(id, 'company', ['profile']);
+  }
+
+  this.company.detailed = (id) => {
+    return makeRequest(id, 'company', ['detailed']);
+  }
+
+  this.company.stock = (id) => {
+    return makeRequest(id, 'company', ['stock']);
+  }
+
+  this.company.employees = (id) => {
+    return makeRequest(id, 'company', ['employees']);
+  }
+
+  this.company.news = (id) => {
+    return makeRequest(id, 'company', ['news']);
+  }
+
+  this.company.newsfull = (id) => {
+    return makeRequest(id, 'company', ['newsfull']);
+  }
+
+  ///////////////////////////////////////////////
+  //                  Market
+  ///////////////////////////////////////////////
+
+  this.market = {};
+
+  this.market.bazaar = (id) => {
+    return makeRequest(id, 'market', ['bazaar']);
+  }
+  this.market.itemmarket = (id) => {
+    return makeRequest(id, 'market', ['itemmarket']);
+  }
+  this.market.pointsmarket = (id) => {
+    return makeRequest(id, 'market', ['pointsmarket']);
+  }
+
+  ///////////////////////////////////////////////
+  //                  Faction
+  ///////////////////////////////////////////////
+
+  this.faction = {};
+
+  this.faction.basic = (id) => {
+    return makeRequest(id, 'faction', ['basic']);
+  }
+
+  this.faction.chain = (id) => {
+    return makeRequest(id, 'faction', ['chain']);
+  }
+
+  this.faction.currency = (id) => {
+    return makeRequest(id, 'faction', ['currency']);
+  }
+
+  this.faction.weapons = (id) => {
+    return makeRequest(id, 'faction', ['weapons']);
+  }
+
+  this.faction.armor = (id) => {
+    return makeRequest(id, 'faction', ['armor']);
+  }
+
+  this.faction.temporary = (id) => {
+    return makeRequest(id, 'faction', ['temporary']);
+  }
+
+  this.faction.medical = (id) => {
+    return makeRequest(id, 'faction', ['medical']);
+  }
+
+  this.faction.drugs = (id) => {
+    return makeRequest(id, 'faction', ['drugs']);
+  }
+
+  this.faction.boosters = (id) => {
+    return makeRequest(id, 'faction', ['boosters']);
+  }
+
+  this.faction.cesium = (id) => {
+    return makeRequest(id, 'faction', ['cesium']);
+  }
+
+  this.faction.mainnews = (id) => {
+    return makeRequest(id, 'faction', ['mainnews']);
+  }
+
+  this.faction.mainnewsfull = (id) => {
+    return makeRequest(id, 'faction', ['mainnewsfull']);
+  }
+
+  this.faction.attacknews = (id) => {
+    return makeRequest(id, 'faction', ['attacknews']);
+  }
+
+  this.faction.attacknewsfull = (id) => {
+    return makeRequest(id, 'faction', ['attacknewsfull']);
+  }
+
+  this.faction.armorynews = (id) => {
+    return makeRequest(id, 'faction', ['armorynews']);
+  }
+
+  this.faction.armorynewsfull = (id) => {
+    return makeRequest(id, 'faction', ['armorynewsfull']);
+  }
+
+  this.faction.donationnews = (id) => {
+    return makeRequest(id, 'faction', ['donationnews']);
+  }
+
+  this.faction.donationnewsfull = (id) => {
+    return makeRequest(id, 'faction', ['donationnewsfull']);
+  }
+
+  this.faction.crimes = (id) => {
+    return makeRequest(id, 'faction', ['crimes']);
+  }
+
+  this.faction.attacks = (id) => {
+    return makeRequest(id, 'faction', ['attacks']);
+  }
+
+  this.faction.attacksfull = (id) => {
+    return makeRequest(id, 'faction', ['attacksfull']);
+  }
+
+  this.faction.upgrades = (id) => {
+    return makeRequest(id, 'faction', ['upgrades']);
+  }
+
+  this.faction.stats = (id) => {
+    return makeRequest(id, 'faction', ['stats']);
+  }
+
+  this.faction.donations = (id) => {
+    return makeRequest(id, 'faction', ['donations']);
+  }
+
+
+
   ///////////////////////////////
   //  Utilities
   ///////////////////////////////
 
   function checkError(response) {
+    const message = 'API ERROR - ';
     if (response.error !== undefined) {
       switch (response.error.code) {
         case 0:
-          alert('Unknown error');
+          alert(message + 'Unknown error');
           break;
         case 1:
-          alert('Key is empty');
+          alert(message + 'Key is empty');
           break;
         case 2:
-          alert('Incorrect Key');
+          alert(message + 'Incorrect Key');
           break;
         case 3:
-          alert('Wrong type');
+          alert(message + 'Wrong type');
           break;
         case 4:
-          alert('Wrong fields');
+          alert(message + 'Wrong fields');
           break;
         case 5:
-          alert('Too many requests');
+          alert(message + 'Too many requests');
           break;
         case 6:
-          alert('Incorrect ID');
+          alert(message + 'Incorrect ID');
           break;
         case 7:
-          alert('Incorrect ID-entity relation');
+          alert(message + 'Incorrect ID-entity relation');
           break;
         case 8:
-          alert('IP block');
+          alert(message + 'IP block');
           break;
         case 9:
-          alert('API disabled');
+          alert(message + 'API disabled');
           break;
         case 10:
-          alert('Key owner is in federal jail');
+          alert(message + 'Key owner is in federal jail');
           break;
         case 11:
-          alert('Key change error');
+          alert(message + 'Key change error');
           break;
         case 12:
-          alert('Key read error');
+          alert(message + 'Key read error');
           break;
         default:
-          alert('Unknown Error ID');
+          alert(message + 'Unknown Error ID');
           break;
       }
       return true;
@@ -300,7 +461,7 @@ function Torn(config) {
     }
 
     // url
-    let url =  baseURL + '/' + type + '/';
+    let url = baseURL + '/' + type + '/';
     if (id === undefined) {
       // hi friend ♥
     } else {

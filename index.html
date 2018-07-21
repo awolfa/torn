@@ -46,6 +46,25 @@
   <button id="btnUserRefills">Refills</button>
 
   <br/>
+  <h1>Properties</h1>
+  <button id="btnPropertiesProperty">Property</button>
+
+  <br/>
+  <h1>Company</h1>
+  <button id="btnCompanyProfile">Profile</button>
+  <button id="btnCompanyDetailed">Detailed</button>
+  <button id="btnCompanyStock">Stock</button>
+  <button id="btnCompanyEmployees">Employees</button>
+  <button id="btnCompanyNews">News</button>
+  <button id="btnCompanyNewsFull">NewsFull</button>
+
+  <br/>
+  <h1>Item Market</h1>
+  <button id="btnMarketBazaar">Bazaar</button>
+  <button id="btnMarketItemMarket">ItemMarket</button>
+  <button id="btnMarketPointsMarket">PointsMarket</button>
+
+  <br/>
   <h1>Torn</h1>
   <button id="btnTornItems">Items</button>
   <button id="btnTornMedals">Medals</button>
@@ -415,7 +434,100 @@
       });
     });
 
+    //////////////////////////////
+    //          Property
+    //////////////////////////////
+
+    document.getElementById('btnPropertiesProperty').addEventListener('click', () => {
+      torn.properties.property().then((result) => {
+        printResponse(result);
+      }, function (err) {
+        printResponse(err);
+      });
+    });
+    
+    //////////////////////////////
+    //          Company
+    //////////////////////////////
+
+    document.getElementById('btnCompanyProfile').addEventListener('click', () => {
+      torn.company.profile().then((result) => {
+        printResponse(result);
+      }, function (err) {
+        printResponse(err);
+      });
+    });
+
+    document.getElementById('btnCompanyDetailed').addEventListener('click', () => {
+      torn.company.detailed().then((result) => {
+        printResponse(result);
+      }, function (err) {
+        printResponse(err);
+      });
+    });
+
+    document.getElementById('btnCompanyStock').addEventListener('click', () => {
+      torn.company.stock().then((result) => {
+        printResponse(result);
+      }, function (err) {
+        printResponse(err);
+      });
+    });
+
+    document.getElementById('btnCompanyEmployees').addEventListener('click', () => {
+      torn.company.employees().then((result) => {
+        printResponse(result);
+      }, function (err) {
+        printResponse(err);
+      });
+    });
+
+    document.getElementById('btnCompanyNews').addEventListener('click', () => {
+      torn.company.news().then((result) => {
+        printResponse(result);
+      }, function (err) {
+        printResponse(err);
+      });
+    });
+
+    document.getElementById('btnCompanyNewsFull').addEventListener('click', () => {
+      torn.company.newsfull().then((result) => {
+        printResponse(result);
+      }, function (err) {
+        printResponse(err);
+      });
+    });
+
+    //////////////////////////////
+    //         Market
+    //////////////////////////////
+
+    document.getElementById('btnMarketBazaar').addEventListener('click', () => {
+      torn.market.bazaar().then((result) => {
+        printResponse(result);
+      }, function (err) {
+        printResponse(err);
+      });
+    });
+
+    document.getElementById('btnMarketItemMarket').addEventListener('click', () => {
+      torn.market.itemmarket().then((result) => {
+        printResponse(result);
+      }, function (err) {
+        printResponse(err);
+      });
+    });
+
+    document.getElementById('btnMarketPointsMarket').addEventListener('click', () => {
+      torn.market.pointsmarket().then((result) => {
+        printResponse(result);
+      }, function (err) {
+        printResponse(err);
+      });
+    });
+
   }
+
 
   function printResponse(obj) {
     const outputString = JSON.stringify(obj, null, 2);
