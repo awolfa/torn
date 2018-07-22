@@ -1,6 +1,6 @@
 # torn.js
 Javascript API Library for the Torn City API using Promises.
-API Documentation can be found at api.torn.com
+API Documentation can be found at https://api.torn.com
 
 ### Getting started
 To use import the script and create a Torn object as follows
@@ -39,5 +39,5 @@ where .user is the endpoint category, .networth is the selection and id is an op
 .torn
 
 #### Available Selections
-For a full list of available selections visit api.torn.com
+For a full list of available selections visit https://api.torn.com
 
